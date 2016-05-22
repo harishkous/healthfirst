@@ -1,0 +1,237 @@
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Menu Planner
+          <!--  <small>Control panel</small>-->
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active"> Menu Planner</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content menuPlanner" ng-controller="MenuPageCtrl"  id="listfood"> 
+                
+             <div class="box box-default color-palette-box">
+           <!-- <div class="box-header with-border">
+              <h3 class="box-title"><i class="fa fa-tag"></i> Color Palette</h3>
+            </div>-->
+            <div class="box-body">
+				<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+              <!-- /.row -->
+              <!-- /.row -->
+            </div><!-- /.box-body -->
+          </div>    
+                  
+                
+					 
+                  
+
+                  <!-- /.tab-pane -->
+                
+            
+		 
+           <div class="row" ng-controller="ItemsPageCtrl">
+            <div class="col-md-3">
+
+             <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Type</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+					<div layout="row" layout-wrap flex>
+						<div flex="40" ng-repeat="type in types">
+						  <md-checkbox  ng-model="selectedFoodType" ng-click="filterItemsByType(selectedFoodType,type)" >
+							{{ type }} 
+						  </md-checkbox>
+						</div>
+					  </div>
+					  
+				 
+					 
+				</div><!-- /.box-body -->
+              </div>
+			  
+			  <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Allergens</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+					
+					<div layout="row" layout-wrap flex>
+						<div flex="50" ng-repeat="allergen in allergens">
+						  <md-checkbox  ng-model="selectedAllergen" ng-click="filterItemsByAllergen(selectedAllergen,allergen)" >
+							{{ allergen }} 
+						  </md-checkbox>
+						</div>
+					  </div>
+					  
+					 						  
+					 
+				</div><!-- /.box-body -->
+              </div>
+               <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Healthy</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="box-body">
+					<div layout="row" layout-wrap flex>
+						<div flex="50" ng-repeat="healthy in healthiness">
+						  <md-checkbox  ng-model="selectedhealthy" ng-click="togglefilterItemsByHealthy(selectedhealthy,healthy)" >
+							{{ healthy }} 
+						  </md-checkbox>
+						</div>
+					  </div>
+					  
+					 					  
+					 
+				</div><!-- /.box-body -->
+              </div>
+			  
+	    <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Calories</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="layout box-body">
+					<md-slider flex ng-model="calorie" min="10" max="500" aria-label="calorie" id="calorie-slider" class="md-primary">
+      </md-slider>
+					 <div flex="20" layout layout-align="center center">
+        <input flex type="number" ng-model="calorie" aria-label="calorie" aria-controls="calorie-slider">
+      </div>					  
+					 
+				</div><!-- /.box-body -->
+              </div>
+			  
+			  <div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Category</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="layout box-body"   layout-align="center">
+						  <md-input-container  flex="80">
+							<label>Category</label>
+							<md-select ng-model="selectedCategory" multiple>
+								<md-option ng-value="category" ng-repeat="category in categories">{{category}}</md-option>
+							</md-select>
+						  </md-input-container>
+				</div><!-- /.box-body -->
+              </div>
+		<div class="box box-solid">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Cooking Method</h3>
+                  <div class="box-tools">
+                    <button data-widget="collapse" class="btn btn-box-tool"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+                <div class="layout box-body"    layout-align="center" >
+						  <md-input-container flex="80">
+							<label>Cooking Method</label>
+							<md-select ng-model="selectedCookMethod" multiple>
+								<md-option ng-value="method" ng-repeat="method in cookingMethods">{{method}}</md-option>
+							</md-select>
+						  </md-input-container>
+				</div><!-- /.box-body -->
+              </div>
+              
+            </div><!-- /.col -->
+            <div class="col-md-9">
+				<div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Food Items</h3>
+                  <div class="box-tools pull-right">
+                    <div class="has-feedback">
+                      <input type="text" placeholder="Search Items" ng-model="search" class="form-control input-sm">
+                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                  <div class="table-responsive itemsList">
+                    <!-- /.table -->
+					 <div id="items" class="row list-group"  >
+						<div class="item  col-xs-6 col-lg-3" ng-repeat="item in items | filter:search">
+							<div class="thumbnail">
+								
+								 <h5 class="group inner list-group-item-heading {{item.healthiness}}">
+										{{item.name}}</h5> 
+										<i aria-hidden="true" class="fa fa-circle fa-border {{item.type}}" ></i>
+									 
+								<img class="group list-group-image" ng-src="/resources/item_images/{{item.image}}.jpg" alt="{{item.name}}" />
+									 
+								<div class="cookmethod"> {{item.cookingMethod}} </div>
+								<div class="caption">
+									<i  class="icon-allergens icon-{{allergen}}" ng-repeat="allergen in item.allergens"></i>  
+									 <div class="pull-right" >{{item.caloriesPer100g[0]}} cal</div>
+								</div>
+								<div class="itemAction"> 
+									<md-checkbox  ng-model="selectedBFItem" >Breakfast </md-checkbox> 
+									<md-checkbox  ng-model="selectedLDItem" >Lunch </md-checkbox> 
+								</div>
+							</div>
+						</div>
+						  
+					</div>
+                  </div><!-- /.mail-box-messages -->
+                </div><!-- /.box-body -->
+                <div class="box-footer no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                </div>
+              </div>
+              <!-- /.nav-tabs-custom -->
+            </div><!-- /.col -->
+          </div>
+					
+				 
+		  
+
+        </section><!-- /.content -->
+       <!-- /.content-wrapper -->

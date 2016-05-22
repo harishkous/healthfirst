@@ -1,0 +1,103 @@
+[
+    {
+        "name": "Curd rice/Mixed vegetable raita",
+        "allergens": ["cereals","milk","mustard"],
+        "type": "veg",
+        "healthiness": "healthy",
+        "caloriesPer100g": [65,45],
+        "cookingMethod": "fried",
+        "image": "item_2",
+        "category": "continental"
+    },
+    {
+        "name": "Tandoor roti/Phulka",
+        "allergens": ["eggs","sesame","soya"],
+        "type": "nonveg",
+        "healthiness": "unhealthy",
+        "caloriesPer100g": [70,90],
+        "cookingMethod": "roasting",
+        "image": "item_3",
+        "category": "snacks"
+    },
+    {
+        "name": "Broken wheat payasam",
+        "allergens": ["nuts","peanuts","cereals"],
+        "type": "ova",
+        "healthiness": "average",
+        "caloriesPer100g": [175],
+        "cookingMethod": "broiling",
+        "image": "item_4",
+        "category": "soups"
+    },
+    {
+        "name": "Paneer makhni/Mixed vegetable gravy",
+        "allergens": ["cereals","milk","mustard"],
+        "type": "ova",
+        "healthiness": "average",
+        "caloriesPer100g": [89],
+        "cookingMethod": "deep fried",
+        "image": "item_5",
+        "category": "pickles"
+    },
+    {
+        "name": "Kabuli pulao/Chitranna",
+        "allergens": ["eggs","sesame","soya"],
+        "type": "nonveg",
+        "healthiness": "unhealthy",
+        "caloriesPer100g": [200],
+        "cookingMethod": "roasting",
+        "image": "item_6",
+        "category": "starters"
+    },
+    {
+        "name": "White rice",
+        "allergens": ["nuts","peanuts","cereals"],
+        "type": "veg",
+        "healthiness": "average",
+        "caloriesPer100g": [48],
+        "cookingMethod": "broiling",
+        "image": "item_7",
+        "category": "snacks"
+    },
+    {
+        "name": "Potato bun",
+        "allergens": ["cereals","milk","mustard"],
+        "type": "veg",
+        "healthiness": "healthy",
+        "caloriesPer100g": [98],
+        "cookingMethod": "roasting",
+        "image": "item_8",
+        "category": "soups"
+    },
+    {
+        "name": "Baked vegetables",
+        "allergens": ["eggs","sesame","soya"],
+        "type": "nonveg",
+        "healthiness": "unhealthy",
+        "caloriesPer100g": [34],
+        "cookingMethod": "broiling",
+        "image": "item_9",
+        "category": "pickles"
+    },
+    {
+        "name": "Basil with fruit salad",
+        "allergens": ["nuts","peanuts","cereals"],
+        "type": "veg",
+        "healthiness": "healthy",
+        "caloriesPer100g": [99],
+        "cookingMethod": "fried",
+        "image": "item_10",
+        "category": "starters"
+    },
+    {
+        "name": "Crispy vegetable",
+        "allergens": ["cereals","milk","mustard"],
+        "type": "nonveg",
+        "healthiness": "unhealthy",
+        "caloriesPer100g": [44],
+        "cookingMethod": "deep fried",
+        "image": "item_11",
+        "category": "continental"
+    }
+    
+]

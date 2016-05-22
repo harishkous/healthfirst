@@ -1,0 +1,264 @@
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+            Manage Food Items
+          <!--  <small>Control panel</small>-->
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Food Items</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+		
+		
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Add Food Item">
+        <md-content class="md-padding">
+          
+           <form role="form">
+						  <div class="box-body fooditem" id="addfood">
+							 
+								 
+									<div class="form-group clearfix">
+										 <div class="col-md-6">
+										  <label for="exampleInputEmail1">Item Name</label>
+										  <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter a Food Item">
+										 </div>
+										  <div class="col-md-6">
+										  <label >Allergen</label>
+											<div class="checkbox">
+											<ul class="list-inline">
+											  <li>
+												<input type="checkbox" class="minimal " id="allergen_cb1" checked>
+												<label for="allergen_cb1">Cereals</label>
+											  </li>
+											  <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb2" >
+												 <label for="allergen_cb1">Fish</label>
+											  </li>
+											  <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb3" >
+												 <label for="allergen_cb1">Peanuts</label>
+											  </li>
+											  <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb4"  checked>
+												 <label for="allergen_cb1">Soya</label>
+											  </li>
+											  <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb5"  checked>
+												<label for="allergen_cb1">Milk</label>
+											  </li>
+											  <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb6" >
+												 <label for="allergen_cb1">Mustard</label>
+											  </li>
+											 <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb7"  checked>
+												 <label for="allergen_cb1">Eggs</label>
+											  </li>
+											   <li>
+												 <input type="checkbox" class="minimal " id="allergen_cb8" >
+												<label for="allergen_cb1">Sesame</label>
+											  </li>
+												<li>
+												 <input type="checkbox" class="minimal " id="allergen_cb10"  checked>
+												 <label for="allergen_cb1">Nuts</label>
+											  </li>
+
+											</ul>
+												
+												 
+											  </div>
+										  </div>
+									</div>	 
+										
+									
+								 <div class="form-group clearfix">
+									
+									<div class="col-md-6">
+									<label >Food Type</label> 
+									<ul class="list-inline radio">
+											  <li>
+												<input type="radio" name="r1" class="minimal" checked>  <label> Veg </label>
+											  </li>
+										
+										  <li>
+												<input type="radio" name="r1" class="minimal"><label> Non-veg</label>
+											  </li>
+											  <li>
+												<input type="radio" name="r1" class="minimal" ><label> Ova</label>
+											  </li>
+									</ul>	
+										
+										
+										
+									</div>
+									<div class="col-md-6">
+										<label >Healthy Color Code</label> 
+										<ul class="list-inline radio healthiness">
+											  <li class="green">
+												<input type="radio" name="r1"  class="minimal " checked>  <label> Healthy </label>
+											  </li>
+										
+										  <li class="orange">
+												<input type="radio" name="r1" class="minimal "><label> Average</label>
+											  </li>
+											  <li class="red">
+												<input type="radio" name="r1" class="minimal red" ><label> Unhealthy</label>
+											  </li>
+									</ul>	
+									
+										 
+									</div>
+								 </div>
+									 <div class="form-group clearfix"> 
+									<div class="col-md-6">
+									 
+									<label >Calorie Count</label> 
+										  <input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter calories per 100gms">
+										
+										
+										
+									</div>
+									<div class="col-md-6">
+										<label >Cooking method</label> 
+										<select class="form-control input-lg">
+										<option>Select</option>
+											<option>Fried</option>
+											<option>Roasting</option>
+											<option>Deep fried</option>
+											<option>Broiling</option>
+											<option>Frying</option>
+										</select>
+									
+										 
+									</div>
+								 </div>
+							<div class="form-group"> 
+									<div class="col-md-6">
+									 
+									<label >Image</label> 
+										  <input type="file" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter calories per 100gms">
+										<p class="help-block">Upload a image of 100x100 dimension(Size not morethan 200kb).</p>
+										
+										
+									</div>
+									<div class="col-md-6">
+										<label >Category</label> 
+										<select class="form-control input-lg">
+											<option>Select</option>
+											<option>Continental</option>
+											<option>Starters</option>
+											<option>Snacks</option>
+											<option>Soups</option>
+											<option>Alcoholic beverages</option>
+											<option>Pickles</option>
+										</select>
+									
+										 
+									</div>
+								 </div>
+							 
+						  </div><!-- /.box-body -->
+
+						  <div class="box-footer text-center">
+							<button type="submit" class="btn btn-primary">Save</button>
+						  </div>
+						</form>
+					
+        </md-content>
+      </md-tab>
+      <md-tab label="List Food Items">
+        <md-content class="md-padding" id="listfood" ng-controller="ItemsPageCtrl">
+          
+           <form role="form" >
+						<div class="row" >
+							<div class="col-md-3">
+								<label >Category</label> 
+								<select class="form-control " ng-options="cat for cat in categories" ng-model="cat" ng-change="filterItemsByCategory(cat)">
+									 <option value="">Select</option>
+								</select>
+							</div>
+							<div class="col-md-3">
+								<div><label >Type</label></div>
+									  
+										<label for="type_cb{{$index+1}}" class="checkbox-inline" ng-repeat="type in types">
+											<input type="checkbox"   ng-model="foodType" id="type_cb{{$index+1}}"   ng-click="filterItemsByType(foodType,type)">
+										{{type}}</label>
+								 
+							</div>
+							<div class="col-md-2">
+								<label >Cooking Method</label> 
+								<select class="form-control " ng-options="method for method in cookingMethods" ng-model="method" ng-change="filterItemsByMethod(method)">
+									 <option value="">Select</option>
+								</select>
+								
+								 
+							</div>
+							<div class="col-md-4">
+								<div><label >Healthiness</label></div>
+								
+								<label for="healthiness_cb{{$index+1}}" class="checkbox-inline" ng-repeat="healthy in healthiness">
+											<input type="checkbox"    id="healthiness_cb{{$index+1}}" ng-model="htype"   ng-click="filterItemsByHealthiness(htype, healthy)">
+										{{healthy}}</label>
+								 
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								 <div class="input-group">
+										  <input type="text" class="form-control" ng-model="search" id="exampleInputEmail1" placeholder="Search">
+										   <span class="input-group-btn">
+											<button  class="btn btn-default">Search</button>
+											</span>
+									</div>	  
+							</div>
+							 
+						</div>
+						
+					</form>
+					 <!-- The timeline -->
+                    <div id="items" class="row list-group"  >
+						<div class="item  col-xs-6 col-lg-3" ng-repeat="item in items | filter:search">
+							<div class="thumbnail">
+								
+								 <h5 class="group inner list-group-item-heading {{item.healthiness}}">
+										{{item.name}}</h5> 
+										<i aria-hidden="true" class="fa fa-circle fa-border {{item.type}}" ></i>
+									 
+								<img class="group list-group-image" ng-src="/resources/item_images/{{item.image}}.jpg" alt="{{item.name}}" />
+									 
+								<div class="cookmethod"> {{item.cookingMethod}} </div>
+								<div class="caption">
+									<i  class="icon-allergens icon-{{allergen}}" ng-repeat="allergen in item.allergens"></i>  
+									 <div class="pull-right" >{{item.caloriesPer100g[0]}} cal</div>
+								</div>
+							</div>
+						</div>
+						 
+        </md-content>
+      </md-tab>
+       
+    </md-tabs>
+  </md-content>
+</div>
+
+
+
+		 
+              </div>
+		 
+           
+					
+				 
+		  
+
+        </section><!-- /.content -->
+       <!-- /.content-wrapper -->

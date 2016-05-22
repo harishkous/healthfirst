@@ -1,0 +1,11 @@
+name,allergens,type,healthiness,caloriesPer100g,cookingMethod,image,category
+Curd rice/Mixed vegetable raita,"[""cereals"",""milk"",""mustard""]",veg,healthy,65/45,fried,item_2,continental
+Tandoor roti/Phulka,"[""eggs"","" sesame"",""soya""]",non-veg,unhealthy,70/90,roasting,item_3,snacks
+Broken wheat payasam,"[""nuts"",""peanuts"",""cereals""]",ova,average,175,broiling,item_4,soups
+Paneer makhni/Mixed vegetable gravy,"[""cereals"",""milk"",""mustard""]",ova,average,89,deep fried,item_5,pickles
+Kabuli pulao/Chitranna,"[""eggs"","" sesame"",""soya""]",non-veg,unhealthy,200,roasting,item_6,starters
+White rice,"[""nuts"",""peanuts"",""cereals""]",veg,average,48,broiling,item_7,snacks
+Potato bun,"[""cereals"",""milk"",""mustard""]",veg,healthy,98,roasting,item_8,soups
+Baked vegetables,"[""eggs"","" sesame"",""soya""]",non-veg,unhealthy,34,broiling,item_9,pickles
+Basil with fruit salad,"[""nuts"",""peanuts"",""cereals""]",veg,healthy,99,fried,item_10,starters
+Crispy vegetable,"[""cereals"",""milk"",""mustard""]",non-veg,unhealthy,44,deep fried,item_11,continental
